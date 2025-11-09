@@ -265,7 +265,7 @@
             color: var(--dark);
             display: flex;
             align-items: center;
-            justify-content: between;
+            justify-content: space-between;
         }
 
         .filter-options {
@@ -694,7 +694,7 @@
             background: var(--secondary);
         }
 
-        /* Toast Notification */
+        /* Toast Notification - CORRIGIDO */
         .toast {
             position: fixed;
             bottom: 80px;
@@ -710,10 +710,14 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            opacity: 0;
+            visibility: hidden;
         }
 
         .toast.show {
             transform: translateX(-50%) translateY(0);
+            opacity: 1;
+            visibility: visible;
         }
 
         /* Menu Lateral */
@@ -802,6 +806,35 @@
             z-index: 999;
             border: none;
             cursor: pointer;
+        }
+
+        /* Resultados da Busca */
+        .search-results {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 15px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .search-results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .search-results-count {
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .clear-search {
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            font-size: 0.9rem;
         }
 
         /* Responsive */
@@ -922,8 +955,19 @@
             </div>
         </section>
 
+        <!-- Resultados da Busca (inicialmente oculto) -->
+        <section class="search-results" id="searchResults" style="display: none;">
+            <div class="search-results-header">
+                <h3>Resultados da Busca</h3>
+                <button class="clear-search" id="clearSearch">Limpar</button>
+            </div>
+            <div class="products-grid" id="searchResultsGrid">
+                <!-- Resultados da busca serão carregados aqui -->
+            </div>
+        </section>
+
         <!-- Produtos em Destaque -->
-        <section>
+        <section id="featuredProducts">
             <div class="section-title">
                 <span>Produtos em Destaque</span>
                 <a href="#" class="view-all">Ver todos</a>
@@ -1065,7 +1109,7 @@
 
     <div class="overlay" id="overlay"></div>
 
-    <!-- Toast Notification -->
+    <!-- Toast Notification - CORRIGIDO -->
     <div class="toast" id="toast">
         <i class="fas fa-check-circle"></i>
         <span id="toastMessage">Produto adicionado ao carrinho!</span>
@@ -1084,7 +1128,8 @@
                 category: "feminino",
                 rating: 4.8,
                 reviews: 124,
-                sizes: ["P", "M", "G"]
+                sizes: ["P", "M", "G"],
+                tags: ["vestido", "floral", "verão", "elegante"]
             },
             {
                 id: 2,
@@ -1096,7 +1141,8 @@
                 category: "feminino",
                 rating: 4.5,
                 reviews: 89,
-                sizes: ["P", "M", "G"]
+                sizes: ["P", "M", "G"],
+                tags: ["blusa", "seda", "premium", "básico"]
             },
             {
                 id: 3,
@@ -1108,7 +1154,8 @@
                 category: "feminino",
                 rating: 4.9,
                 reviews: 256,
-                sizes: ["38", "40", "42"]
+                sizes: ["38", "40", "42"],
+                tags: ["calça", "jeans", "skinny", "casual"]
             },
             {
                 id: 4,
@@ -1120,7 +1167,8 @@
                 category: "masculino",
                 rating: 4.7,
                 reviews: 67,
-                sizes: ["P", "M", "G", "GG"]
+                sizes: ["P", "M", "G", "GG"],
+                tags: ["jaqueta", "couro", "legítimo", "inverno"]
             },
             {
                 id: 5,
@@ -1132,7 +1180,8 @@
                 category: "feminino",
                 rating: 4.6,
                 reviews: 142,
-                sizes: ["P", "M", "G"]
+                sizes: ["P", "M", "G"],
+                tags: ["saia", "midi", "plissada", "elegante"]
             },
             {
                 id: 6,
@@ -1144,7 +1193,8 @@
                 category: "masculino",
                 rating: 4.4,
                 reviews: 312,
-                sizes: ["P", "M", "G", "GG"]
+                sizes: ["P", "M", "G", "GG"],
+                tags: ["camiseta", "básica", "premium", "algodão"]
             }
         ];
 
@@ -1154,10 +1204,15 @@
         let currentFilter = 'all';
         let maxPrice = 500;
         let selectedSizes = [];
+        let isSearching = false;
+        let currentSearchTerm = '';
 
         // Elementos DOM
         const productsGrid = document.getElementById('productsGrid');
         const bestSellersGrid = document.getElementById('bestSellersGrid');
+        const searchResultsGrid = document.getElementById('searchResultsGrid');
+        const searchResults = document.getElementById('searchResults');
+        const featuredProducts = document.getElementById('featuredProducts');
         const cartIcon = document.getElementById('cartIcon');
         const cartCountElement = document.querySelector('.cart-count');
         const cartModal = document.getElementById('cartModal');
@@ -1173,6 +1228,7 @@
         const toastMessage = document.getElementById('toastMessage');
         const searchInput = document.getElementById('searchInput');
         const searchBtn = document.getElementById('searchBtn');
+        const clearSearch = document.getElementById('clearSearch');
         const filterToggle = document.getElementById('filterToggle');
         const filtersSection = document.getElementById('filtersSection');
         const priceRange = document.getElementById('priceRange');
@@ -1201,6 +1257,7 @@
             closeMenu.addEventListener('click', closeSideMenu);
             overlay.addEventListener('click', closeSideMenu);
             filterToggle.addEventListener('click', toggleFilters);
+            clearSearch.addEventListener('click', clearSearchResults);
 
             // Busca
             searchBtn.addEventListener('click', performSearch);
@@ -1212,7 +1269,11 @@
             priceRange.addEventListener('input', function() {
                 maxPrice = parseInt(this.value);
                 priceValue.textContent = maxPrice;
-                filterProducts();
+                if (isSearching) {
+                    filterSearchResults();
+                } else {
+                    filterProducts();
+                }
             });
 
             // Filtros de categoria
@@ -1222,7 +1283,11 @@
                     document.querySelectorAll('.category-scroll-item').forEach(i => i.classList.remove('active'));
                     this.classList.add('active');
                     currentFilter = this.getAttribute('data-category');
-                    filterProducts();
+                    if (isSearching) {
+                        filterSearchResults();
+                    } else {
+                        filterProducts();
+                    }
                 });
             });
 
@@ -1238,7 +1303,25 @@
                         selectedSizes = selectedSizes.filter(s => s !== size);
                     }
                     
-                    filterProducts();
+                    if (isSearching) {
+                        filterSearchResults();
+                    } else {
+                        filterProducts();
+                    }
+                });
+            });
+
+            // Filtros de categoria nos filtros avançados
+            document.querySelectorAll('.filter-option[data-filter]').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-option[data-filter]').forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.getAttribute('data-filter');
+                    if (isSearching) {
+                        filterSearchResults();
+                    } else {
+                        filterProducts();
+                    }
                 });
             });
 
@@ -1259,6 +1342,11 @@
         // Renderizar produtos em um grid específico
         function renderProductsToGrid(gridElement, productsToRender) {
             gridElement.innerHTML = '';
+            
+            if (productsToRender.length === 0) {
+                gridElement.innerHTML = '<p style="text-align: center; padding: 2rem; color: var(--text);">Nenhum produto encontrado</p>';
+                return;
+            }
             
             productsToRender.forEach(product => {
                 const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
@@ -1531,18 +1619,60 @@
             const searchTerm = searchInput.value.toLowerCase().trim();
             
             if (searchTerm === '') {
-                renderProductsToGrid(productsGrid, products.slice(0, 4));
+                clearSearchResults();
                 return;
             }
             
-            const searchResults = products.filter(product =>
-                product.name.toLowerCase().includes(searchTerm) ||
-                product.category.toLowerCase().includes(searchTerm) ||
-                product.badge.toLowerCase().includes(searchTerm)
+            currentSearchTerm = searchTerm;
+            isSearching = true;
+            
+            // Mostrar seção de resultados
+            searchResults.style.display = 'block';
+            featuredProducts.style.display = 'none';
+            
+            filterSearchResults();
+        }
+
+        // Filtrar resultados da busca
+        function filterSearchResults() {
+            let searchResults = products.filter(product =>
+                product.name.toLowerCase().includes(currentSearchTerm) ||
+                product.category.toLowerCase().includes(currentSearchTerm) ||
+                product.badge.toLowerCase().includes(currentSearchTerm) ||
+                product.tags.some(tag => tag.toLowerCase().includes(currentSearchTerm))
             );
             
-            renderProductsToGrid(productsGrid, searchResults);
-            showToast(`${searchResults.length} produtos encontrados para "${searchTerm}"`);
+            // Aplicar filtros adicionais
+            if (currentFilter !== 'all') {
+                searchResults = searchResults.filter(product => 
+                    product.category === currentFilter
+                );
+            }
+            
+            // Filtrar por preço
+            searchResults = searchResults.filter(product => 
+                product.price <= maxPrice
+            );
+            
+            // Filtrar por tamanho (se algum estiver selecionado)
+            if (selectedSizes.length > 0) {
+                searchResults = searchResults.filter(product =>
+                    product.sizes.some(size => selectedSizes.includes(size))
+                );
+            }
+            
+            renderProductsToGrid(searchResultsGrid, searchResults);
+            showToast(`${searchResults.length} produtos encontrados para "${currentSearchTerm}"`);
+        }
+
+        // Limpar resultados da busca
+        function clearSearchResults() {
+            searchInput.value = '';
+            currentSearchTerm = '';
+            isSearching = false;
+            searchResults.style.display = 'none';
+            featuredProducts.style.display = 'block';
+            renderProducts();
         }
 
         // Abrir modal do carrinho
@@ -1574,12 +1704,18 @@
             filtersSection.style.display = filtersSection.style.display === 'none' ? 'block' : 'none';
         }
 
-        // Mostrar toast notification
+        // Mostrar toast notification - CORRIGIDO
         function showToast(message) {
+            // Cancelar timeout anterior se existir
+            if (window.toastTimeout) {
+                clearTimeout(window.toastTimeout);
+            }
+            
             toastMessage.textContent = message;
             toast.classList.add('show');
             
-            setTimeout(() => {
+            // Configurar timeout para esconder o toast
+            window.toastTimeout = setTimeout(() => {
                 toast.classList.remove('show');
             }, 3000);
         }
