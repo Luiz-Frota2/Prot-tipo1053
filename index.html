@@ -1,54 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ModaStyle - Sua Loja de Roupas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #E31837;
-            --secondary: #FF6B8B;
-            --accent: #FFCAD4;
-            --light: #FFF9FB;
-            --dark: #333333;
-            --white: #FFFFFF;
-            --gray: #F5F5F5;
-            --text: #555555;
-            --success: #4CAF50;
-            --border: #E0E0E0;
-            --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            --transition: all 0.3s ease;
+<HTML língua="pt-BR">
+<caboça>
+    <meta conjunto de caracteres="UTF-8">
+    <meta nome="janela de visualização" conteúdo="largura=largura do dispositivo, escala inicial=1,0">
+    <título>ModaStyle - Sua Loja de Roupas</título>
+    <link relação="folha de estilo" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&exibir=trocarte" relação="folha de estilo">
+    <estilo>
+ :raiz {
+ --primário: #E31837;
+ --secundário: #FF6B8B;
+ --acento: #FFCAD4;
+ --luz: #FFF9FB;
+ --escuro: #333333;
+ --branco: #FFFFFF;
+ --cinza: #F5F5F5;
+ --texto: #555555;
+ --sucesso: #4CAF50;
+ --fronteira: #E0E0E0;
+ --sombra: 0 2px 10px RGBA(0, 0, 0, 0,08);
+ --transição: tudo 0,3s facilidade;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+ * {
+ margem: 0;
+ enchimento: 0;
+ dimensionamento de caixa: caixa de fronteira;
+ família de fontes: 'Poppins', sem serifa;
         }
 
-        body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-            padding-bottom: 80px; /* Espaço para a bottom navigation */
+ corpo {
+ cor de fundo: var(--luz);
+ cor: var(--texto);
+ alta da linha: 1,6;
+ fundo de enchimento: 80px; /* Espaço para navegação inferior */
         }
 
-        /* Header Mobile */
-        .header-mobile {
-            background: var(--white);
-            box-shadow: var(--shadow);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
+ /* Cabeçalho Móvel */
+ .cabeçalho-móvel {
+ fundo: var(--branco);
+ caixa-sombra: var(--sombra);
+ posição: fixa;
+ topo: 0;
+ escerta: 0;
+ direção: 0;
+ índice z: 1000;
         }
 
-        .top-bar {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+ .barra superior {
+ fundo: gradiente linear(90 graus, var(--primário), var(--secundário));
             color: var(--white);
             padding: 8px 15px;
             font-size: 0.8rem;
@@ -108,31 +108,31 @@
             background: var(--white);
             border-bottom: 1px solid var(--border);
             position: relative;
-            z-index: 999;
+ índice z: 999;
         }
 
-        .search-bar {
-            display: flex;
-            background: var(--gray);
-            border-radius: 25px;
-            overflow: hidden;
-            padding: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+ .barra de pesquisa {
+ exibição: flexível;
+ fundo: var(--cinza);
+ raio da borda: 25px;
+ transbordamento: oculto;
+ preenchimento: 5px;
+ sombra da caixa: 0 2px 5px rgba(0,0,0,0,1);
         }
 
-        .search-bar input {
-            flex: 1;
-            border: none;
-            background: transparent;
-            padding: 10px 15px;
-            outline: none;
-            font-size: 1rem;
+ .entrada da barra de pesquisa {
+ flexível: 1;
+ fronteira: nenhuma;
+ fundo: transparente;
+ preenchimento: 10px 15px;
+ esboço: nenhum;
+ tamanho da fonte: 1rem;
         }
 
-        .search-bar button {
-            background: var(--primary);
-            color: var(--white);
-            border: none;
+ .botão da barra de pesquisa {
+ fundo: var(--primário);
+ cor: var(--branco);
+ fronteira: nenhuma;
             padding: 0 15px;
             border-radius: 20px;
             cursor: pointer;
@@ -478,71 +478,71 @@
             border-radius: 15px;
             padding: 20px;
             margin: 20px 0;
-            text-align: center;
+ alinhamento de texto: centro;
         }
 
-        .offers-banner h2 {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+ .banner de ofertas h2 {
+ cor: var(--primário);
+ margem inferior: 10px;
+ tamanho da fonte: 1,3rem;
         }
 
-        .offers-banner p {
-            margin-bottom: 15px;
-            font-size: 0.9rem;
+ .banner de ofertas p {
+ margem inferior: 15px;
+ tamanho da fonte: 0,9rem;
         }
 
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 15px 0;
+ .contagem regressiva {
+ exibição: flexível;
+ justificar-conteúdo: centro;
+ lacuna: 10px;
+ margem: 15px 0;
         }
 
-        .countdown-item {
-            background: var(--primary);
-            color: var(--white);
-            padding: 8px;
-            border-radius: 8px;
-            min-width: 50px;
+ .item de contagem regressiva {
+ fundo: var(--primário);
+ cor: var(--branco);
+ preenchimento: 8px;
+ raio da borda: 8px;
+ largura mínima: 50px;
         }
 
-        .countdown-value {
-            font-size: 1.2rem;
-            font-weight: 700;
+ .valor de contagem regressiva {
+ tamanho da fonte: 1,2rem;
+ peso da fonte: 700;
         }
 
-        .countdown-label {
-            font-size: 0.7rem;
-            opacity: 0.9;
+ .countdown-label {
+ tamanho da fonte: 0,7rem;
+ opacidade: 0,9;
         }
 
-        /* Bottom Navigation - Menu Fixo Inferior */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
+ /* Navegação Inferior - Menu Fixo Inferior */
+ .navegação inferior {
+ posição: fixa;
+ fundo: 0;
+ esquerda: 0;
+ direita: 0;
+ fundo: var(--branco);
+ exibição: flexível;
+ justificar-conteúdo: espaço ao redor;
+ preenchimento: 10px 0;
+ sombra da caixa: 0 -2px 10px rgba(0,0,0,0,1);
+ índice z: 1000;
         }
 
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: var(--text);
-            font-size: 0.8rem;
-            transition: var(--transition);
+ .item de navegação {
+ exibição: flexível;
+ direção flexível: coluna;
+ alinhar itens: centro;
+ decoração de texto: nenhuma;
+ cor: var(--texto);
+ tamanho da fonte: 0,8rem;
+ transição: var(--transição);
         }
 
-        .nav-item.active,
-        .nav-item:hover {
+ .nav-item.ativo,
+ .nav-item:hover {
             color: var(--primary);
         }
 
@@ -897,18 +897,6 @@
         </div>
     </header>
 
-    <!-- Menu de Categorias Scroll -->
-    <div class="categories-scroll">
-        <a href="#" class="category-scroll-item active" data-category="all">Todos</a>
-        <a href="#" class="category-scroll-item" data-category="feminino">Feminino</a>
-        <a href="#" class="category-scroll-item" data-category="masculino">Masculino</a>
-        <a href="#" class="category-scroll-item" data-category="vestidos">Vestidos</a>
-        <a href="#" class="category-scroll-item" data-category="blusas">Blusas</a>
-        <a href="#" class="category-scroll-item" data-category="calcas">Calças</a>
-        <a href="#" class="category-scroll-item" data-category="sapatos">Sapatos</a>
-        <a href="#" class="category-scroll-item" data-category="acessorios">Acessórios</a>
-        <a href="#" class="category-scroll-item" data-category="ofertas">Ofertas</a>
-    </div>
 
     <!-- Conteúdo Principal -->
     <main class="main-content">
