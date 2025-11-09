@@ -253,6 +253,8 @@
             padding: 15px;
             margin: 15px 0;
             box-shadow: var(--shadow);
+            position: relative;
+            z-index: 10; /* Adicionado para garantir que fique acima dos resultados */
         }
 
         .filter-group {
@@ -808,13 +810,15 @@
             cursor: pointer;
         }
 
-        /* Resultados da Busca */
+        /* Resultados da Busca - CORRIGIDO */
         .search-results {
             background: var(--white);
             border-radius: 12px;
             padding: 15px;
             margin: 15px 0;
             box-shadow: var(--shadow);
+            position: relative;
+            z-index: 5; /* Z-index menor que os filtros */
         }
 
         .search-results-header {
@@ -955,7 +959,7 @@
             </div>
         </section>
 
-        <!-- Resultados da Busca (inicialmente oculto) -->
+        <!-- Resultados da Busca (inicialmente oculto) - CORRIGIDO: agora está abaixo dos filtros -->
         <section class="search-results" id="searchResults" style="display: none;">
             <div class="search-results-header">
                 <h3>Resultados da Busca</h3>
