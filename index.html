@@ -36,7 +36,7 @@
             padding-bottom: 80px; /* Espaço para a bottom navigation */
         }
 
-        /* Header Mobile */
+        /* Header Mobile - ESTRUTURA CORRIGIDA */
         .header-mobile {
             background: var(--white);
             box-shadow: var(--shadow);
@@ -60,6 +60,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            background: var(--white);
         }
 
         .logo {
@@ -102,7 +103,7 @@
             font-weight: bold;
         }
 
-        /* Barra de Pesquisa - POSIÇÃO CORRIGIDA */
+        /* Barra de Pesquisa - POSIÇÃO CORRIGIDA SEM SOBREPOSIÇÃO */
         .search-container {
             padding: 12px 15px;
             background: var(--white);
@@ -143,7 +144,7 @@
             background: var(--secondary);
         }
 
-        /* Menu de Categorias Horizontal */
+        /* Menu de Categorias Horizontal - POSIÇÃO CORRIGIDA */
         .categories-scroll {
             background: var(--white);
             padding: 15px 0;
@@ -151,7 +152,7 @@
             white-space: nowrap;
             border-bottom: 1px solid var(--border);
             position: sticky;
-            top: 140px; /* Ajustado para a nova altura do header */
+            top: 140px; /* Altura total do header (top-bar + header-main + search-container) */
             z-index: 998;
         }
 
@@ -177,9 +178,9 @@
             color: var(--white);
         }
 
-        /* Conteúdo Principal */
+        /* Conteúdo Principal - MARGEM CORRIGIDA */
         .main-content {
-            margin-top: 160px; /* Ajustado para a nova altura do header */
+            margin-top: 190px; /* Altura total do header fixo (50px top-bar + 60px header-main + 60px search-container + 20px categories) */
             padding: 15px;
         }
 
@@ -253,8 +254,6 @@
             padding: 15px;
             margin: 15px 0;
             box-shadow: var(--shadow);
-            position: relative;
-            z-index: 10; /* Adicionado para garantir que fique acima dos resultados */
         }
 
         .filter-group {
@@ -810,15 +809,13 @@
             cursor: pointer;
         }
 
-        /* Resultados da Busca - CORRIGIDO */
+        /* Resultados da Busca */
         .search-results {
             background: var(--white);
             border-radius: 12px;
             padding: 15px;
             margin: 15px 0;
             box-shadow: var(--shadow);
-            position: relative;
-            z-index: 5; /* Z-index menor que os filtros */
         }
 
         .search-results-header {
@@ -854,17 +851,35 @@
             .hero-content h1 {
                 font-size: 2rem;
             }
+            
+            /* Ajustes para tablet */
+            .main-content {
+                margin-top: 200px;
+            }
+            
+            .categories-scroll {
+                top: 150px;
+            }
         }
 
         @media (min-width: 1024px) {
             .products-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
+            
+            /* Ajustes para desktop */
+            .main-content {
+                margin-top: 210px;
+            }
+            
+            .categories-scroll {
+                top: 160px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header Mobile -->
+    <!-- Header Mobile - ESTRUTURA CORRIGIDA -->
     <header class="header-mobile">
         <div class="top-bar">
             <span>FRETE GRÁTIS ACIMA DE R$ 99 • ATÉ 10X SEM JUROS</span>
@@ -888,7 +903,7 @@
             </div>
         </div>
         
-        <!-- Barra de Pesquisa - POSIÇÃO CORRIGIDA -->
+        <!-- Barra de Pesquisa - AGORA INTEGRADA CORRETAMENTE -->
         <div class="search-container">
             <div class="search-bar">
                 <input type="text" placeholder="Buscar produtos..." id="searchInput">
@@ -897,11 +912,20 @@
         </div>
     </header>
 
-    <!-- Menu de Categorias Scroll -->
+    <!-- Menu de Categorias Horizontal - POSIÇÃO CORRIGIDA -->
     <div class="categories-scroll">
-        
+        <a href="#" class="category-scroll-item active" data-category="all">Todos</a>
+        <a href="#" class="category-scroll-item" data-category="feminino">Feminino</a>
+        <a href="#" class="category-scroll-item" data-category="masculino">Masculino</a>
+        <a href="#" class="category-scroll-item" data-category="vestidos">Vestidos</a>
+        <a href="#" class="category-scroll-item" data-category="blusas">Blusas</a>
+        <a href="#" class="category-scroll-item" data-category="calcas">Calças</a>
+        <a href="#" class="category-scroll-item" data-category="sapatos">Sapatos</a>
+        <a href="#" class="category-scroll-item" data-category="acessorios">Acessórios</a>
+        <a href="#" class="category-scroll-item" data-category="ofertas">Ofertas</a>
+    </div>
 
-    <!-- Conteúdo Principal -->
+    <!-- Conteúdo Principal - MARGEM CORRIGIDA -->
     <main class="main-content">
         <!-- Banner Hero -->
         <section class="hero-banner">
@@ -950,7 +974,7 @@
             </div>
         </section>
 
-        <!-- Resultados da Busca (inicialmente oculto) - CORRIGIDO: agora está abaixo dos filtros -->
+        <!-- Resultados da Busca (inicialmente oculto) -->
         <section class="search-results" id="searchResults" style="display: none;">
             <div class="search-results-header">
                 <h3>Resultados da Busca</h3>
