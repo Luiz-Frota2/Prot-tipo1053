@@ -1,54 +1,54 @@
 <!DOCTYPE html>
-<HTML língua="pt-BR">
-<caboça>
-    <meta conjunto de caracteres="UTF-8">
-    <meta nome="janela de visualização" conteúdo="largura=largura do dispositivo, escala inicial=1,0">
-    <título>ModaStyle - Sua Loja de Roupas</título>
-    <link relação="folha de estilo" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&exibir=trocarte" relação="folha de estilo">
-    <estilo>
- :raiz {
- --primário: #E31837;
- --secundário: #FF6B8B;
- --acento: #FFCAD4;
- --luz: #FFF9FB;
- --escuro: #333333;
- --branco: #FFFFFF;
- --cinza: #F5F5F5;
- --texto: #555555;
- --sucesso: #4CAF50;
- --fronteira: #E0E0E0;
- --sombra: 0 2px 10px RGBA(0, 0, 0, 0,08);
- --transição: tudo 0,3s facilidade;
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModaStyle - Sua Loja de Roupas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E31837;
+            --secondary: #FF6B8B;
+            --accent: #FFCAD4;
+            --light: #FFF9FB;
+            --dark: #333333;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --text: #555555;
+            --success: #4CAF50;
+            --border: #E0E0E0;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
         }
 
- * {
- margem: 0;
- enchimento: 0;
- dimensionamento de caixa: caixa de fronteira;
- família de fontes: 'Poppins', sem serifa;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
- corpo {
- cor de fundo: var(--luz);
- cor: var(--texto);
- alta da linha: 1,6;
- fundo de enchimento: 80px; /* Espaço para navegação inferior */
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 80px; /* Espaço para a bottom navigation */
         }
 
- /* Cabeçalho Móvel */
- .cabeçalho-móvel {
- fundo: var(--branco);
- caixa-sombra: var(--sombra);
- posição: fixa;
- topo: 0;
- escerta: 0;
- direção: 0;
- índice z: 1000;
+        /* Header Mobile */
+        .header-mobile {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
         }
 
- .barra superior {
- fundo: gradiente linear(90 graus, var(--primário), var(--secundário));
+        .top-bar {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             color: var(--white);
             padding: 8px 15px;
             font-size: 0.8rem;
@@ -80,59 +80,59 @@
         .header-icon {
             font-size: 1.3rem;
             color: var(--dark);
-            position: relative;
-            background: none;
-            border: none;
-            cursor: pointer;
+            posição: relativo;
+            fundo: nenhum;
+            fronteira: nenhum;
+            cursor: ponteiro;
         }
 
-        .cart-count {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            font-weight: bold;
+        .contagem de carrinhos {
+            posição: absoluto;
+            topo: -5px;
+            certo: -5px;
+            fundo: var(--primário);
+            cor: var(--branco);
+            raio de borda: 50%;
+            largura: 18px;
+            altura: 18px;
+            exibir: flexível;
+            alinhar itens: centro;
+            justificar-conteúdo: centro;
+            tamanho da fonte: 0,7rem;
+            peso da fonte: audacioso;
         }
 
         /* Barra de Pesquisa - POSIÇÃO CORRIGIDA */
-        .search-container {
-            padding: 12px 15px;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            position: relative;
- índice z: 999;
+        .contêiner de pesquisa {
+            enchimento: 12px 15px;
+            fundo: var(--branco);
+            fundo da fronteira: 1px sólido var(--fronteira);
+            posição: relativo;
+            índice z: 999;
         }
 
- .barra de pesquisa {
- exibição: flexível;
- fundo: var(--cinza);
- raio da borda: 25px;
- transbordamento: oculto;
- preenchimento: 5px;
- sombra da caixa: 0 2px 5px rgba(0,0,0,0,1);
+        .barra de pesquisa {
+            exibir: flexível;
+            fundo: var(--cinza);
+            raio de borda: 25px;
+            transbordar: escondido;
+            enchimento: 5px;
+            caixa-sombra: 0 2px 5px RGBA(0,0,0,0,1);
         }
 
- .entrada da barra de pesquisa {
- flexível: 1;
- fronteira: nenhuma;
- fundo: transparente;
- preenchimento: 10px 15px;
- esboço: nenhum;
- tamanho da fonte: 1rem;
+        .barra de pesquisa entrada {
+            flexível: 1;
+            fronteira: nenhum;
+            fundo: transparente;
+            enchimento: 10px 15px;
+            esboço: nenhum;
+            tamanho da fonte: 1rem;
         }
 
- .botão da barra de pesquisa {
- fundo: var(--primário);
- cor: var(--branco);
- fronteira: nenhuma;
+        .search-bar button {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
             padding: 0 15px;
             border-radius: 20px;
             cursor: pointer;
@@ -478,71 +478,71 @@
             border-radius: 15px;
             padding: 20px;
             margin: 20px 0;
- alinhamento de texto: centro;
+            text-align: center;
         }
 
- .banner de ofertas h2 {
- cor: var(--primário);
- margem inferior: 10px;
- tamanho da fonte: 1,3rem;
+        .offers-banner h2 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
         }
 
- .banner de ofertas p {
- margem inferior: 15px;
- tamanho da fonte: 0,9rem;
+        .offers-banner p {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
         }
 
- .contagem regressiva {
- exibição: flexível;
- justificar-conteúdo: centro;
- lacuna: 10px;
- margem: 15px 0;
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
         }
 
- .item de contagem regressiva {
- fundo: var(--primário);
- cor: var(--branco);
- preenchimento: 8px;
- raio da borda: 8px;
- largura mínima: 50px;
+        .countdown-item {
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px;
+            border-radius: 8px;
+            min-width: 50px;
         }
 
- .valor de contagem regressiva {
- tamanho da fonte: 1,2rem;
- peso da fonte: 700;
+        .countdown-value {
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
- .countdown-label {
- tamanho da fonte: 0,7rem;
- opacidade: 0,9;
+        .countdown-label {
+            font-size: 0.7rem;
+            opacity: 0.9;
         }
 
- /* Navegação Inferior - Menu Fixo Inferior */
- .navegação inferior {
- posição: fixa;
- fundo: 0;
- esquerda: 0;
- direita: 0;
- fundo: var(--branco);
- exibição: flexível;
- justificar-conteúdo: espaço ao redor;
- preenchimento: 10px 0;
- sombra da caixa: 0 -2px 10px rgba(0,0,0,0,1);
- índice z: 1000;
+        /* Bottom Navigation - Menu Fixo Inferior */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
         }
 
- .item de navegação {
- exibição: flexível;
- direção flexível: coluna;
- alinhar itens: centro;
- decoração de texto: nenhuma;
- cor: var(--texto);
- tamanho da fonte: 0,8rem;
- transição: var(--transição);
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.8rem;
+            transition: var(--transition);
         }
 
- .nav-item.ativo,
- .nav-item:hover {
+        .nav-item.active,
+        .nav-item:hover {
             color: var(--primary);
         }
 
@@ -593,56 +593,56 @@
         }
 
         .cart-item {
-            display: flex;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
+            exibir: flexível;
+            enchimento: 10px 0;
+            fundo da fronteira: 1px sólido var(--fronteira);
         }
 
-        .cart-item-image {
-            width: 80px;
-            height: 80px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            margin-right: 10px;
+        .imagem do item do carrinho {
+            largura: 80px;
+            altura: 80px;
+            tamanho do fundo: cobrir;
+            posição de fundo: centro;
+            raio de borda: 8px;
+            margem direita: 10px;
         }
 
-        .cart-item-details {
-            flex: 1;
+        .detalhes do item do carrinho {
+            flexível: 1;
         }
 
-        .cart-item-name {
-            font-weight: 600;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
+        .nome do item do carrinho {
+            peso da fonte: 600;
+            margem inferior: 5px;
+            tamanho da fonte: 0,9rem;
         }
 
-        .cart-item-price {
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 5px;
+        .preço do item do carrinho {
+            cor: var(--primário);
+            peso da fonte: 700;
+            margem inferior: 5px;
         }
 
-        .cart-item-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .ações do item do carrinho {
+            exibir: flexível;
+            alinhar itens: centro;
+            lacuna: 10px;
         }
 
-        .quantity-btn {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 1px solid var(--border);
-            background: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+        .quantidade-btn {
+            largura: 30px;
+            altura: 30px;
+            raio de borda: 50%;
+            fronteira: 1px sólido var(--fronteira);
+            fundo: var(--branco);
+            exibir: flexível;
+            alinhar itens: centro;
+            justificar-conteúdo: centro;
+            cursor: ponteiro;
         }
 
-        .quantity {
-            margin: 0 10px;
+        .quantidade {
+            margem: 0 10px;
             font-weight: 600;
         }
 
@@ -848,90 +848,102 @@
             }
             
             .hero-banner {
-                height: 250px;
+                altura: 250px;
             }
             
-            .hero-content h1 {
-                font-size: 2rem;
+            .conteúdo-herói h1 {
+                tamanho da fonte: 2rem;
             }
         }
 
-        @media (min-width: 1024px) {
-            .products-grid {
-                grid-template-columns: repeat(4, 1fr);
+        @mídia (largura mínima: 1024px) {
+            .rede de produtos {
+                colunas de modelo de grade: repetir(4, 1fr);
             }
         }
-    </style>
-</head>
-<body>
-    <!-- Header Mobile -->
-    <header class="header-mobile">
-        <div class="top-bar">
-            <span>FRETE GRÁTIS ACIMA DE R$ 99 • ATÉ 10X SEM JUROS</span>
-        </div>
+    </estilo>
+</cabeça>
+<corpo>
+    <!-- Cabeçalho Móvel -->
+    <cabeçalho classe="cabeçalho-móvel">
+        <dividir classe="barra superior">
+            <extensão>FRETE GRÁTIS ACIMA DE R$ 99 • ATÉ 10X SEM JUROS</extensão>
+        </dividir>
         
-        <div class="header-main">
-            <button id="menuToggle" class="header-icon">
-                <i class="fas fa-bars"></i>
-            </button>
+        <dividir classe="cabeçalho-principal">
+            <botão id="menuAlternar" classe="ícone de cabeçalho">
+                <i classe="fas fa-bars"></i>
+            </botão>
             
-            <div class="logo">Moda<span>Style</span></div>
+            <dividir classe="logotipo">Moda<extensão>Estilo</extensão></dividir>
             
-            <div class="header-actions">
-                <button class="header-icon" id="wishlistIcon">
-                    <i class="far fa-heart"></i>
-                </button>
-                <button class="header-icon" id="cartIcon">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count">0</span>
-                </button>
-            </div>
-        </div>
+            <dividir classe="ações de cabeçalho">
+                <botão classe="ícone de cabeçalho" id="ícone da lista de desejos">
+                    <i classe="coração fa distante"></i>
+                </botão>
+                <botão classe="ícone de cabeçalho" id="cartIcon">
+                    <i classe="fas fa-saco de compras"></i>
+                    <extensão classe="contagem de carrinhos">0</extensão>
+                </botão>
+            </dividir>
+        </dividir>
         
         <!-- Barra de Pesquisa - POSIÇÃO CORRIGIDA -->
-        <div class="search-container">
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar produtos..." id="searchInput">
-                <button id="searchBtn"><i class="fas fa-search"></i></button>
-            </div>
-        </div>
-    </header>
+        <dividir classe="contêiner de pesquisa">
+            <dividir classe="barra de pesquisa">
+                <entrada tipo="texto" espaço reservado="Produtos de ônibus..." id="entrada de pesquisa">
+                <botão id="pesquisaBtn"><i classe="fas fa-search"></i></botão>
+            </dividir>
+        </dividir>
+    </cabeçalho>
 
+    <!-- Menu de Categorias Rolar -->
+    <dividir classe="categorias-rolagem">
+        <a href="#" classe="categoria-scroll-item ativo" categoria de dados="todos">Todos</a>
+        <a href="#" classe="item de rolagem de categoria" categoria de dados="feminino">Feminino</a>
+        <a href="#" classe="item de rolagem de categoria" categoria de dados="masculino">Masculino</a>
+        <a href="#" classe="item de rolagem de categoria" categoria de dados="vestidos">Vestidos</a>
+        <a href="#" classe="item de rolagem de categoria" categoria de dados="blusas">Blusas</a>
+        <a href="#" classe="item de rolagem de categoria" categoria de dados="calcas">Calças</a>
+        <a href="#" classe="item de rolagem de categoria" categoria de dados="sapatos">Sapatos</a>
+        <a href="#" classe="item de rolagem de categoria" categoria de dados="acessórios">Acessórios</a>
+        <a href="#" classe="item de rolagem de categoria" categoria de dados="ofertas">Ofertas</a>
+    </dividir>
 
-    <!-- Conteúdo Principal -->
-    <main class="main-content">
-        <!-- Banner Hero -->
-        <section class="hero-banner">
-            <div class="hero-content">
-                <h1>Coleção Verão 2023</h1>
+    <!-- Conteúdo Diretor -->
+    <principal classe="conteúdo principal">
+        <!-- Herói do Banner -->
+        <seção classe="bandeira de herói">
+            <dividir classe="conteúdo de herói">
+                <h1>Colecção Verão 2023</h1>
                 <p>Até 50% OFF em looks incríveis</p>
-                <a href="#" class="btn">Comprar Agora</a>
-            </div>
-        </section>
+                <a href="#" classe="btn">Comprar Agora</a>
+            </dividir>
+        </seção>
 
-        <!-- Filtros Avançados -->
-        <section class="filters-section" id="filtersSection">
-            <div class="filter-group">
-                <div class="filter-title">
-                    <span>Categorias</span>
-                </div>
-                <div class="filter-options">
-                    <div class="filter-option active" data-filter="all">Todos</div>
-                    <div class="filter-option" data-filter="feminino">Feminino</div>
-                    <div class="filter-option" data-filter="masculino">Masculino</div>
-                    <div class="filter-option" data-filter="infantil">Infantil</div>
-                </div>
-            </div>
+ <!-- Filtros Avançados -->
+        <sessão classe="seção de filtros" id="seção de filtros">
+            <dividir classe="grupo de filtros">
+                <dividir classe="título-do-filtro">
+                    <extensão>Categorias</extensão>
+ </dividir>
+                <dividir classe="opções de filtro">
+                    <dividir classe="opção de filtro ativa" filtro de dados="todos">Todos</dividir>
+                    <dividir classe="opção de filtro" filtro de dados="feminino">Feminino</dividir>
+                    <dividir classe="opção de filtro" filtro de dados="masculino">Masculino</dividir>
+                    <dividir classe="opção de filtro" filtro de dados="infantil">Infantil</dividir>
+ </dividir>
+ </dividir>
             
-            <div class="filter-group">
-                <div class="filter-title">
-                    <span>Preço</span>
-                </div>
-                <input type="range" class="price-range" id="priceRange" min="0" max="500" value="500">
-                <div class="price-values">
-                    <span>R$ 0</span>
-                    <span>Até R$ <span id="priceValue">500</span></span>
-                </div>
+            <dividir classe="grupo de filtros">
+                <dividir classe="título-do-filtro">
+                    <extensão>Preço</extensão>
+ </dividir>
+                <entrada tipo="alcance" classe="faixa de preço" id="faixa de preço" min="0" máximo="500" valor="500">
+                <dividir classe="valores de preço">
+                    <extensão>R$ 0</extensão>
+                    <extensão>Áté R$ <extensão id="valor do preço">500</extensão></extensão>
+ </dividir>
             </div>
             
             <div class="filter-group">
@@ -1283,254 +1295,254 @@
                 });
             });
 
-            // Filtros de tamanho
-            document.querySelectorAll('.filter-option[data-size]').forEach(option => {
-                option.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    const size = this.getAttribute('data-size');
+ // Filtros de tamanho
+            documento. .querySelectorAll('.opção-de-filtro[tamanho-dos-dados]'). .paraCada(opção => {
+                opção. .addEventListener('clique', função() {
+                    este.lista de classes. .alternar('ativo');
+                    const tamanho = este. .obterAtributo('tamanho dos dados');
                     
-                    if (this.classList.contains('active')) {
-                        selectedSizes.push(size);
-                    } else {
-                        selectedSizes = selectedSizes.filter(s => s !== size);
+                    se (este.lista de classes. .contém('ativo')) {
+                        Tamanhos selecionados. .empurrar(tamanho);
+                    } outro {
+                        Tamanhos selecionados = Tamanhos selecionados. .filtro(s => s !== tamanho);
                     }
                     
-                    if (isSearching) {
-                        filterSearchResults();
-                    } else {
-                        filterProducts();
+                    se (isSearqueamento) {
+                        filtrarResultadosPesquisa();
+                    } outro {
+ filtroProdutos();
                     }
                 });
             });
 
-            // Filtros de categoria nos filtros avançados
-            document.querySelectorAll('.filter-option[data-filter]').forEach(option => {
-                option.addEventListener('click', function() {
-                    document.querySelectorAll('.filter-option[data-filter]').forEach(opt => opt.classList.remove('active'));
-                    this.classList.add('active');
-                    currentFilter = this.getAttribute('data-filter');
-                    if (isSearching) {
-                        filterSearchResults();
-                    } else {
-                        filterProducts();
+ // Filtros de categoria não filtros avançados
+            documento. .querySelectorAll('.filter-option[filtro de dados]'). .paraCada(opção => {
+                opção. .addEventListener('clique', função() {
+                    documento. .querySelectorAll('.filter-option[filtro de dados]'). .paraCada(optar => optar.lista de classes. .remover('ativo'));
+                    este.lista de classes. .adicionar('ativo');
+                    Filtro atual = este. .obterAtributo('filtro de dados');
+                    se (está pesquisando) {
+                        filtrarResultadosPesquisa();
+                    } outro {
+ filtroProdutos();
                     }
                 });
             });
 
-            // Fechar modal ao clicar fora
-            window.addEventListener('click', function(event) {
-                if (event.target === cartModal) {
-                    closeCartModal();
+ // Fechar modal ao clicar fóruns
+            janela. .addEventListener('clique', função(evento) {
+                se (atét.alvo === carrinhoModal) {
+                    fecharCartModal();
                 }
             });
         }
 
-        // Renderizar produtos
-        function renderProducts() {
-            renderProductsToGrid(productsGrid, products.slice(0, 4));
-            renderProductsToGrid(bestSellersGrid, products.slice(2, 6));
+ // Renderizar produtos
+        diversão renderProdutos() {
+ renderProdutosParaGrid(produtosGrid, produtos. . .fatiar(0, 4));
+ renderProdutosParaGrid(great mais vendidos, produtos. .fatiar(2, 6));
         }
 
-        // Renderizar produtos em um grid específico
-        function renderProductsToGrid(gridElement, productsToRender) {
-            gridElement.innerHTML = '';
+ // Renderizar produtos em hum grade específico
+        função renderProdutosParaGrid(elemento de grade, produtosParaRenderizar) {
+            elemento de grade.HTML interno = '';
             
-            if (productsToRender.length === 0) {
-                gridElement.innerHTML = '<p style="text-align: center; padding: 2rem; color: var(--text);">Nenhum produto encontrado</p>';
-                return;
+            se (produtosParaRenderizar.comprimento === 0) {
+                elemento de grade.HTML interno = '<p style="text-align: center; padding: 2rem; color: var(--text);">Nenhum produto encontrado</p>';
+                retornar;
             }
             
-            productsToRender.forEach(product => {
-                const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
-                const isInWishlist = wishlist.includes(product.id);
+            produtosParaRenderizar. .paraCada(produto => {
+                const desconto = Matemática. .redondo(((produto.preço original - produto.preço) / produto.preço original) * 100);
+                const está na lista de desejos = lista de desejos. .inclui(produto.id);
                 
-                const productCard = document.createElement('div');
-                productCard.className = 'product-card';
-                productCard.setAttribute('data-category', product.category);
-                productCard.setAttribute('data-price', product.price);
+                const cartão de produto = documento. .criarElemento('div');
+                cartão de produto.nome da classe = 'cartão-produto';
+                cartão de produto. .definirAtributo('categoria de dados', produto.categoria);
+                cartão de produto. .definirAtributo('preço dos dados', produto.preço);
                 
-                productCard.innerHTML = `
-                    <div class="product-image" style="background-image: url('${product.image}')">
-                        <span class="product-badge">${product.badge}</span>
-                        <button class="wishlist-btn ${isInWishlist ? 'active' : ''}" data-id="${product.id}">
-                            <i class="${isInWishlist ? 'fas' : 'far'} fa-heart"></i>
-                        </button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-name">${product.name}</div>
-                        <div class="product-rating">
-                            <div class="stars">
-                                ${generateStars(product.rating)}
-                            </div>
-                            <span class="rating-count">(${product.reviews})</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="current-price">R$ ${product.price.toFixed(2)}</span>
-                            <span class="original-price">R$ ${product.originalPrice.toFixed(2)}</span>
-                            <span class="discount">-${discount}%</span>
-                        </div>
-                        <div class="installments">ou 3x de R$ ${(product.price / 3).toFixed(2)}</div>
-                        <div class="product-actions">
-                            <button class="action-btn" data-id="${product.id}">
-                                <i class="fas fa-shopping-cart"></i> Comprar
-                            </button>
-                            <button class="action-btn btn-outline quick-view-btn" data-id="${product.id}">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                `;
+                cartão de produto.HTML interno = `
+                    <dividir classe="imagem do produto" estilo="imagem de fundo: url('${product.image}')">
+                        <extensão classe="emblema do produto">${produto.distintivo}</extensão>
+                        <botão classe="lista de desejos-btn ${isInWishlist? 'ativo': ''}" ID de dados="${product.id}">
+                            <i classe="${isInWishlist? 'fas': 'longe'} coração fa"></i>
+ </botão>
+ </dividir>
+                    <dividir classe="informações do produto">
+                        <dividir classe="nome do produto">${produto.nome}</dividir>
+                        <dividir classe="classificação do produto">
+                            <dividir classe="estrelas">
+                                ${gerarEstrelas(produto.classificação)}
+ </dividir>
+                            <extensão classe="contagem de classificação">(${produto.avaliações})</extensão>
+ </dividir>
+                        <dividir classe="preço do produto">
+                            <extensão classe="preço atual">R$ ${produto.preço. .paraFixo(2)}</extensão>
+                            <extensão classe="preço original">R$ ${produto.preço original. .paraFixo(2)}</extensão>
+                            <extensão classe="desconto">-${desconto}%</extensão>
+ </dividir>
+                        <dividir classe="parcelas">ou 3x de R$ ${(produto.preço / 3). .paraFixo(2)}</dividir>
+                        <dividir classe="ações-produto">
+                            <botão classe="ação-btn" ID de dados="${product.id}">
+                                <i classe="fas fa-carrinho de compras"></i> Comprar
+ </botão>
+                            <botão classe="ação-btn btn-esboço visualização-rápida-btn" ID de dados="${product.id}">
+                                <i classe="fas fa-eye"></i>
+ </botão>
+ </dividir>
+ </dividir>
+ `;
                 
-                gridElement.appendChild(productCard);
+                elemento de grade. .appendCriança(cartão de produto);
             });
 
-            // Adicionar event listeners aos botões
-            addProductEventListeners();
+ // Adicionar evento ouvintes aos botões
+            adicionarProductEventListeners();
         }
 
-        // Gerar estrelas de avaliação
-        function generateStars(rating) {
-            let stars = '';
-            const fullStars = Math.floor(rating);
-            const hasHalfStar = rating % 1 !== 0;
+ // Gerar estrelas de avaliação
+        função gerarEstrelas(classificação) {
+            deixar estrelas = '';
+            const estrelas completas = Matemática. .piso(classificação);
+            const tem meia estrela = classificação % 1!== 0;
             
-            for (let i = 0; i < fullStars; i++) {
-                stars += '<i class="fas fa-star"></i>';
+            para (deixar i = 0; i < estrelas completas; i++) {
+                estrelas += '<i class="fas fa-star"></i>';
             }
             
-            if (hasHalfStar) {
-                stars += '<i class="fas fa-star-half-alt"></i>';
+            se (tem meia estrela) {
+                estrelas += '<i class="fas fa-star-half-alt"></i>';
             }
             
             const emptyStars = 5 - Math.ceil(rating);
             for (let i = 0; i < emptyStars; i++) {
-                stars += '<i class="far fa-star"></i>';
+                estrelas += '<i class="far fa-star"></i>';
             }
             
-            return stars;
+            retornar estrelas;
         }
 
-        // Adicionar event listeners aos produtos
-        function addProductEventListeners() {
-            // Botões de compra
-            document.querySelectorAll('.action-btn:not(.quick-view-btn)').forEach(button => {
-                button.addEventListener('click', function() {
-                    const productId = parseInt(this.getAttribute('data-id'));
-                    const product = products.find(p => p.id === productId);
-                    addToCart(product);
+ // Adicionar evento ouvintes aos produtos
+        função adicionarProductEventListeners() {
+ // Botões de compra
+            documento. .querySelectorAll('.action-btn:not(.quick-view-btn)'). .paraCada(botão => {
+                botão. .addEventListener('clique', função() {
+                    const ID do produto = parseInt(este. .obterAtributo('id de dados'));
+                    const produto = produtos. .encontrar(p => p.id === ID do produto);
+                    adicionar ao carrinho(produto);
                 });
             });
 
-            // Botões de wishlist
-            document.querySelectorAll('.wishlist-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    const productId = parseInt(this.getAttribute('data-id'));
-                    toggleWishlist(productId, this);
+ // Botões de lista de desejos
+            documento. .querySelectorAll('.lista de desejos-btn'). .paraCada(botão => {
+                botão. .addEventListener('clique', função() {
+                    const ID do produto = parseInt(este. .obterAtributo('id de dados'));
+                    alternarLista de desejos(ID do produto, este);
                 });
             });
 
-            // Visualização rápida
-            document.querySelectorAll('.quick-view-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    const productId = parseInt(this.getAttribute('data-id'));
-                    const product = products.find(p => p.id === productId);
-                    showToast(`Visualizando ${product.name}`);
+ // Visualização rápida
+            documento. . .querySelectorAll('.visualização rápida-btn'). . .paraCada(botão => {
+                botão. . .addEventListener('camarilha', diversão() {
+                    const ID fazer produto = parseInt(este. . .obterAtributo('id de dados'));
+                    const produto = produtos. . .encontrar(p => p.id === ID fazer produto);
+                    maisrarTorrada(`Visualizando ${produto.nome}`);
                 });
             });
         }
 
-        // Adicionar produto ao carrinho
-        function addToCart(product) {
-            // Verificar se o produto já está no carrinho
-            const existingItem = cart.find(item => item.id === product.id);
+ // Adicionar produto ao carrinho
+        diversão adicionário ao carrinho(produto) {
+ // Verificador se o produto já está não carrinho
+            const item existente = carrinho. . .encontrar(item => item.id === produto.id);
             
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    ...product,
-                    quantity: 1
+            se (item existente) {
+                item existente.quantidade += 1;
+            } outro {
+                carrinho. . .empurrar({
+                    ...produto,
+                    quantidade: 1
                 });
             }
             
-            updateCart();
-            showToast(`${product.name} adicionado ao carrinho!`);
+            atualizarCarrinho();
+            maisrarTorrada(`${produto.nome} conselheiro ao carrinho!`);
         }
 
-        // Alternar wishlist
-        function toggleWishlist(productId, button) {
-            const index = wishlist.indexOf(productId);
-            const icon = button.querySelector('i');
+ // Alternar lista de desejos
+        diversão alternarLista de desejos(ID fazer produto, botão) {
+            const índio = lista de desejos. . .índiceDe(ID fazer produto);
+            const ícone = botão. .seletor de consulta('eu');
             
-            if (index === -1) {
-                // Adicionar à wishlist
-                wishlist.push(productId);
-                button.classList.add('active');
-                icon.classList.replace('far', 'fas');
-                showToast('Produto adicionado aos favoritos!');
+            se (índio === -1) {
+ // Adicionar à lista de desejos
+                lista de desejos. . .empurrar(ID fazer produto);
+                botão.lista de aulas. . . . .adicionar('ativo');
+                ícone.lista de aulas. . . . .substituir('longe', 'fas');
+ maisrarTorrada('Produto adicionado aos favoritos!');
                 
-                // Atualizar ícone do header se necessário
-                updateWishlistIcon();
-            } else {
-                // Remover da wishlist
-                wishlist.splice(index, 1);
-                button.classList.remove('active');
-                icon.classList.replace('fas', 'far');
-                showToast('Produto removido dos favoritos!');
+ // Atualizar ícone fazer caboçalho se necessário
+                atualizarÍcone sim Lista de Desejos();
+            } outro {
+ // Removedor sim lista de desejos
+                lista de desejos. . . .emenda(índio, 1);
+                botão.lista de aulas. . . .removedor('ativo');
+                ícone.lista de aulas. . . .substituir('fas', 'longe');
+ maisrarTorrada('Produto removido dos favoritos!');
             }
         }
 
-        // Atualizar ícone da wishlist no header
-        function updateWishlistIcon() {
-            const icon = wishlistIcon.querySelector('i');
-            if (wishlist.length > 0) {
-                icon.classList.replace('far', 'fas');
-            } else {
-                icon.classList.replace('fas', 'far');
+ // Atualizar ícone sim lista de desejos não cabeçalho
+        função atualizarÍcone da Lista de Desejos() {
+            const ícone = lista de desejosÍcone. .seletor de consulta('eu');
+            se (lista de desejos.comprimento > 0) {
+                ícone.lista de classes. .substituir('longe', 'fas');
+            } outro {
+                ícone.lista de classes. .substituir('fas', 'longe');
             }
         }
 
-        // Atualizar carrinho
-        function updateCart() {
-            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+ // Atualizar carrinho
+        função atualizarCarrinho() {
+            const Contagem de carrinhos = carrinho. .reduzir((total, item) => total + item.quantidade, 0);
+            const subtotal = carrinho. .reduzir((total, item) => total + (item.preço * item.quantidade), 0);
             const total = subtotal; // Frete grátis
             
-            cartCountElement.textContent = cartCount;
-            cartTotalElement.textContent = total.toFixed(2);
-            subtotalElement.textContent = subtotal.toFixed(2);
+            elemento de contagem de carrinho.textoConteúdo = Contagem de carrinhos;
+            carrinhoTotalElement.textoConteúdo = total. .paraFixo(2);
+            subtotalElemento.textoConteúdo = subtotal. .paraFixo(2);
             
-            renderCartItems();
+ renderizarItens do Carrinho();
         }
 
-        // Renderizar itens do carrinho
-        function renderCartItems() {
-            cartItems.innerHTML = '';
+ // Renderizar itens fazer carrinho
+        função renderizarItens do Carrinho() {
+            itens do carrinho.HTML interno = '';
             
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<p style="text-align: center; padding: 2rem;">Seu carrinho está vazio</p>';
-                return;
+            se (carrinho.comprimento === 0) {
+                itens do carrinho.HTML interno = '<p style="text-align: center; padding: 2rem;">Seu carro está vazio</p>';
+                retornar;
             }
             
-            cart.forEach((item, index) => {
-                const cartItem = document.createElement('div');
-                cartItem.className = 'cart-item';
+            carrinho. .paraCada((item, índice) => {
+                const item de carrinho = documento. .criarElemento('div');
+                item de carrinho.nome da classe = 'item de carrinho';
                 
-                cartItem.innerHTML = `
-                    <div class="cart-item-image" style="background-image: url('${item.image}')"></div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-name">${item.name}</div>
-                        <div class="cart-item-price">R$ ${item.price.toFixed(2)}</div>
-                        <div class="cart-item-actions">
-                            <button class="quantity-btn minus" data-index="${index}">-</button>
-                            <span class="quantity">${item.quantity}</span>
-                            <button class="quantity-btn plus" data-index="${index}">+</button>
-                            <button class="remove-btn" data-index="${index}">Remover</button>
-                        </div>
-                    </div>
-                `;
+                item de carrinho.HTML interno = `
+                    <dividir classe="imagem do item do carrinho" estilo="imagem de fundo: url('${item.image}')"></dividir>
+                    <dividir classe="detalhes do item do carrinho">
+                        <dividir classe="nome do item do carrinho">${item.nome}</dividir>
+                        <dividir classe="preço do item do carrinho">R$ ${item.preço. .paraFixo(2)}</dividir>
+                        <dividir classe="ações-do-item-do-carrinho">
+                            <botão classe="quantidade-btn menos" índice de dados="${índice}">-</botão>
+                            <extensão classe="quantidade">${item.quantidade}</extensão>
+                            <botão classe="quantidade-btn mais" índice de dados="${índice}">+</botão>
+                            <botão classe="remover-btn" índice de dados="${índice}">Removedor</botão>
+ </dividir>
+ </dividir>
+ `;
                 
-                cartItems.appendChild(cartItem);
+                itens do carrinho. .appendCriança(item de carrinho);
             });
             
             // Adicionar event listeners aos botões de quantidade
@@ -1562,186 +1574,186 @@
             updateCart();
         }
 
-        // Diminuir quantidade
-        function decreaseQuantity(index) {
-            if (cart[index].quantity > 1) {
-                cart[index].quantity -= 1;
-            } else {
-                cart.splice(index, 1);
+ // 
+        função diminuiçãoQuantidade(índice) {
+            se (carrinho[índice].quantidade > 1) {
+                carrinho[índice].quantidade -= 1;
+            } outro {
+                carrinho. .emenda(índice, 1);
             }
-            updateCart();
+            atualizarCarrinho();
         }
 
-        // Remover do carrinho
-        function removeFromCart(index) {
-            const removedItem = cart[index];
-            cart.splice(index, 1);
-            updateCart();
-            showToast(`${removedItem.name} removido do carrinho`);
+ // Removedor fazer carrinho
+        função removerDoCarrinho(índice) {
+            const item removido = carrinho[índice];
+            carrinho. .emenda(índice, 1);
+            atualizarCarrinho();
+            mostrarTorrada(`${item removido.nome} removido fazer carrinho`);
         }
 
-        // Filtrar produtos
-        function filterProducts() {
-            let filteredProducts = products;
+ // Filtrar produtos
+        função filtroProdutos() {
+            deixar Produtos filtrados = produtos;
             
-            // Filtrar por categoria
-            if (currentFilter !== 'all') {
-                filteredProducts = filteredProducts.filter(product => 
-                    product.category === currentFilter
+ // Filtrar por categoria
+            se (Filtro atual !== 'todos') {
+                Produtos filtrados = Produtos filtrados. . . .filtro(produto => 
+                    produto.categoria === Filtro atual
                 );
             }
             
-            // Filtrar por preço
-            filteredProducts = filteredProducts.filter(product => 
-                product.price <= maxPrice
+ // Filtrar por preço
+            Produtos filtrados = Produtos filtrados. . . .filtro(produto => 
+                produto.preço <= preço máximo
             );
             
-            // Filtrar por tamanho (se algum estiver selecionado)
-            if (selectedSizes.length > 0) {
-                filteredProducts = filteredProducts.filter(product =>
-                    product.sizes.some(size => selectedSizes.includes(size))
+ // Filtrar por tamanho (se algo estivador selecionado)
+            se (Tamanhos seletivos.Comprimento > 0) {
+                Produtos filtrados = Produtos filtrados. . . .filtro(produto =>
+                    produto.tamanhos. . .armas de ar comprimido(tamanho => Tamanhos seletivos. . . .inclui(tamanho))
                 );
             }
             
-            renderProductsToGrid(productsGrid, filteredProducts.slice(0, 4));
+ renderProdutosParaGrid(produtosGrid, Produtos filtrados. . . .fatiar(0, 4));
         }
 
-        // Realizar busca
-        function performSearch() {
-            const searchTerm = searchInput.value.toLowerCase().trim();
+ // Realizar busca
+        diversidade executarPesquisa() {
+            const termo de pesquisa = entrada de pesquisa.valentia. .paraCaso Inferior(). . . .aparar();
             
-            if (searchTerm === '') {
-                clearSearchResults();
-                return;
+            se (termo de pesquisa === '') {
+                limparResultados da Pesquisa();
+                retornar;
             }
             
-            currentSearchTerm = searchTerm;
-            isSearching = true;
+            termo de pesquisa atual = termo de pesquisa;
+            está pesquisando = verdadeiro;
             
-            // Mostrar seção de resultados
-            searchResults.style.display = 'block';
-            featuredProducts.style.display = 'none';
+ // Mostrar sessão de resultados
+            resultados da pesquisa.estilo.exibir = 'bloco';
+            Produtos em destaque.estilo.exibir = 'nenhum';
             
-            filterSearchResults();
+            filtrarResultadosPesquisa();
         }
 
-        // Filtrar resultados da busca
-        function filterSearchResults() {
-            let searchResults = products.filter(product =>
-                product.name.toLowerCase().includes(currentSearchTerm) ||
-                product.category.toLowerCase().includes(currentSearchTerm) ||
-                product.badge.toLowerCase().includes(currentSearchTerm) ||
-                product.tags.some(tag => tag.toLowerCase().includes(currentSearchTerm))
+ // Filtrar resultados sim busca
+        função filtrarResultadosPesquisa() {
+            deixar resultados da pesquisa = produtos. .filtro(produto =>
+                produto.nome. .paraCaso Inferior(). .inclui(termo de pesquisa atual) ||
+                produto.categoria. .paraCaso Inferior(). .inclui(termo de pesquisa atual) ||
+                produto.distintivo. .paraCaso Inferior(). .inclui(termo de pesquisa atual) ||
+                produto.tags. .alguns(etiqueta => etiqueta. .paraCaso Inferior(). .inclui(termo de pesquisa atual))
             );
             
-            // Aplicar filtros adicionais
-            if (currentFilter !== 'all') {
-                searchResults = searchResults.filter(product => 
-                    product.category === currentFilter
+ // Aplicar filtros adicionais
+            se (Filtro atual !== 'todos') {
+                resultados sim pesquisa = resultados sim pesquisa. . .filtro(produto => 
+                    produto.categoria === Filtro atual
                 );
             }
             
-            // Filtrar por preço
-            searchResults = searchResults.filter(product => 
-                product.price <= maxPrice
+ // Filtrar por preço
+            resultados sim pesquisa = resultados sim pesquisa. . . .filtro(produto => 
+                produto.preço <= preço máximo
             );
             
-            // Filtrar por tamanho (se algum estiver selecionado)
-            if (selectedSizes.length > 0) {
-                searchResults = searchResults.filter(product =>
-                    product.sizes.some(size => selectedSizes.includes(size))
+ // Filtrar por tamanho (se algo estivador selecionado)
+            se (Tamanhos seletivos.Comprimento > 0) {
+                resultados sim pesquisa = resultados sim pesquisa. . . .filtro(produto =>
+                    produto.tamanhos. .armas de ar comprimido(tamanho => Tamanhos seletivos. . . .inclui(tamanho))
                 );
             }
             
-            renderProductsToGrid(searchResultsGrid, searchResults);
-            showToast(`${searchResults.length} produtos encontrados para "${currentSearchTerm}"`);
+ renderProdutosParaGrid(nota de resultados de pesquisa, resultados sim pesquisa);
+ maisrarTorrada(`${resultados sim pesquisa.Comprimento} produtos encontrar parágrafo "${termo de pesquisa atual}"`);
         }
 
-        // Limpar resultados da busca
-        function clearSearchResults() {
-            searchInput.value = '';
-            currentSearchTerm = '';
-            isSearching = false;
-            searchResults.style.display = 'none';
-            featuredProducts.style.display = 'block';
-            renderProducts();
+ // Limpar resultados sim busca
+        diversidade limparResultados sim Pesquisa() {
+            entrada de pesquisa.valentia = '';
+            termo de pesquisa atual = '';
+            está pesquisando = falso;
+            resultados sim pesquisa.estilo.exibir = 'nenhum';
+            Produtos em desesticar.estilo.exibir = 'bloco';
+            renderProdutos();
         }
 
-        // Abrir modal do carrinho
-        function openCartModal() {
-            cartModal.style.display = 'flex';
+ // Abrir modal fazer carro
+        diversidade openCartModal() {
+            carrinhoModal.estilo.exibir = 'flexível';
         }
 
-        // Fechar modal do carrinho
-        function closeCartModal() {
-            cartModal.style.display = 'none';
+ // Fechar modal fazer carrinho
+        diversidade fecharCartModal() {
+            carrinhoModal.estilo.exibir = 'nenhum';
         }
 
-        // Abrir menu lateral
-        function openSideMenu() {
-            sideMenu.classList.add('active');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+ // Abrir menu lateral
+        diversão abrirMenu Lateral() {
+            menu lateral.lista de aulas. . .adicionar('ativo');
+            sobreposição.lista de aulas. . .adicionar('ativo');
+            documento.corpo.estilo.transbordar = 'escondido';
         }
 
-        // Fechar menu lateral
-        function closeSideMenu() {
-            sideMenu.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
+ // Fechar menu lateral
+        diversão fecharMenu Lateral() {
+            menu lateral.lista de aulas. . .removedor('ativo');
+            sobreposição.lista de aulas. . .removedor('ativo');
+            documento.corpo.estilo.transbordar = 'auto';
         }
 
-        // Alternar visibilidade dos filtros
-        function toggleFilters() {
-            filtersSection.style.display = filtersSection.style.display === 'none' ? 'block' : 'none';
+ // Alternar visibilidade dois filtros
+        diversão alternar Filtros() {
+            filtrosSeção.estilo.exibir = filtrosSeção.estilo.exibir === 'nenhum' ? 'bloco' : 'nenhum';
         }
 
-        // Mostrar toast notification - CORRIGIDO
-        function showToast(message) {
-            // Cancelar timeout anterior se existir
-            if (window.toastTimeout) {
-                clearTimeout(window.toastTimeout);
+ // Notificação de brinde fazer Mostrar - CORRIGIDO
+        diversidade maisrarTorrada(mensagem) {
+ // Cancelar tempo limite anterior se existir
+            se (Janela.tempo limite sim torreda) {
+                tempo limite limpo(Janela.tempo limite sim torreda);
             }
             
-            toastMessage.textContent = message;
-            toast.classList.add('show');
-            
-            // Configurar timeout para esconder o toast
-            window.toastTimeout = setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
+ :Raiz {mensagem de torrada.textoConteúdo = mensagem;
+ --primário: #E31837;torrada.lista de aulas. . .adicionário('mostrar');
+ --secundário: #FF6B8B;
+ --acento: #FFCAD4;// Configurar tempo limite parágrafo economizar ou torcedor
+ --luz: #FFF9FB;Janela.tempo limite sim torrada = definirTempo limite(() => {
+ --escudo: #333333;torrada.lista de aulas. . .removedor('mostrar');
+ --branco: #FFFFFF;}, 3000);
+ --Cinza: #F5F5F5;}
 
-        // Iniciar countdown
-        function startCountdown() {
-            // Data final (3 dias a partir de agora)
-            const countDownDate = new Date();
-            countDownDate.setDate(countDownDate.getDate() + 3);
+ --sucesso: #4CAF50;// Iniciar contato regressivo
+ --fronteira: #E0E0E0;diversidade iniciarContagem regressiva() {
+ --sombra: 0 2px 10px RGBA(0, 0, 0, 0,08);// Dados finais (3 dias a participar de ágora)
+ --transição: tudo 0,3s facilidade;const contagemDescidaData = novo Dados();
+            contagemDescidaData. . .definirDados(contagemDescidaData. . .obterData() + 3);
             
-            // Atualizar a cada segundo
-            const countdownFunction = setInterval(function() {
-                const now = new Date().getTime();
-                const distance = countDownDate - now;
+ * {// Atualizar a cada segundo
+ Margem: 0;const diversidade de contenção regressiva = definirIntervalo(diversidade() {
+ enchimento: 0;const ágora = novo Dados(). . .obterTempo();
+ dimensionamento de caixa: caixa de fronteira;const distância = contagemDescidaData - ágora;
+ família de fontes: 'Poppins', sem serifa;
+ // Cálculos de tempo
+                const dias = Matemática. . .chão(distância / (1000*60*60*24));
+ corpo {const horas = Matemática. . .chão((distância % (1000*60*60*24)) / (1000*60*60));
+ cor de fundo: var(--luz);const minutos = Matemática. . .chão((distância % (1000*60*60)) / (1000 * 60));
+ cor: var(--texto);
+ alta sim linha: 1,6;// Atualizar elementos
+ fundo de enchimento: 80px; /* Espaço para navegação inferior */diasElemento.textoConteúdo = dias.corda de segurança(). . .padIniciar(2, '0');
+                horasElemento.textoConteúdo = horas.corda de segurança(). . .padIniciar(2, '0');
+                minutosElemento.textoConteúdo = minutos.corda de segurança(). . .padIniciar(2, '0');
                 
-                // Cálculos de tempo
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                
-                // Atualizar elementos
-                daysElement.textContent = days.toString().padStart(2, '0');
-                hoursElement.textContent = hours.toString().padStart(2, '0');
-                minutesElement.textContent = minutes.toString().padStart(2, '0');
-                
-                // Se o countdown terminou
-                if (distance < 0) {
-                    clearInterval(countdownFunction);
-                    daysElement.textContent = "00";
-                    hoursElement.textContent = "00";
-                    minutesElement.textContent = "00";
+ // Veja o término sim contenção regressiva
+                se (distância < 0) {
+                    intervalo claro(diversidade de contenção regressiva);
+                    diasElemento.textoConteúdo = "00";
+                    horasElemento.textoConteúdo = "00";
+                    minutosElemento.textoConteúdo = "00";
                 }
             }, 1000);
         }
-    </script>
-</body>
-</html>
+    </roteiro>
+</corpo>
+</
